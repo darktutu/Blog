@@ -5,14 +5,19 @@
   
 
   
-  <title>Archives: 2020 | Hexo</title>
+  <title>EF Core .NET Command-line Tools  | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://darktutu.github.io/Blog/archives/2020/index.html">
+  <meta name="description" content="初始化数据库最近想看看ABP的代码，所以下载了一份代码，然后按照官方的的流程很容易就启动起来了。然后就回家折腾一下，结果回家就没那么轻松了，家里电脑有两台，分别是mac 和win10，对mac不是很熟悉，所以优先弄了下win10上的。但是在win10中，在Package manager console 中运行update-database的时候会出现错误，错误内容是 12   It was not">
+<meta property="og:type" content="article">
+<meta property="og:title" content="EF Core .NET Command-line Tools ">
+<meta property="og:url" content="https://darktutu.github.io/Blog/2018/07/14/before2020/2018-07-14-EFCoreNETcommand-linetools/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="初始化数据库最近想看看ABP的代码，所以下载了一份代码，然后按照官方的的流程很容易就启动起来了。然后就回家折腾一下，结果回家就没那么轻松了，家里电脑有两台，分别是mac 和win10，对mac不是很熟悉，所以优先弄了下win10上的。但是在win10中，在Package manager console 中运行update-database的时候会出现错误，错误内容是 12   It was not">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2018-07-14T17:51:05.000Z">
+<meta property="article:modified_time" content="2020-05-08T05:28:29.559Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="ABP">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/Blog/atom.xml" title="Hexo" type="application/atom+xml">
@@ -62,216 +67,69 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/Blog/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/Blog/2020/05/07/2020/2020-05-07-C#-task-async-await/" class="archive-article-date">
-  <time datetime="2020-05-07T10:34:05.000Z" itemprop="datePublished">May 7</time>
+        <section id="main"><article id="post-before2020/2018-07-14-EFCoreNETcommand-linetools" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/Blog/2018/07/14/before2020/2018-07-14-EFCoreNETcommand-linetools/" class="article-date">
+  <time datetime="2018-07-14T17:51:05.000Z" itemprop="datePublished">2018-07-14</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Blog/2020/05/07/2020/2020-05-07-C#-task-async-await/">c#异步 await/async</a>
+    <h1 class="article-title" itemprop="name">
+      EF Core .NET Command-line Tools 
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/Blog/2020/04/21/frontendinterview/1/" class="archive-article-date">
-  <time datetime="2020-04-21T10:34:05.000Z" itemprop="datePublished">Apr 21</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Blog/2020/04/21/frontendinterview/1/">第1天 前端面试问题</a>
-    </h1>
-  
+        <h1 id="初始化数据库"><a href="#初始化数据库" class="headerlink" title="初始化数据库"></a>初始化数据库</h1><p>最近想看看ABP的代码，所以下载了一份代码，然后按照官方的的流程很容易就启动起来了。然后就回家折腾一下，结果回家就没那么轻松了，家里电脑有两台，分别是mac 和win10，对mac不是很熟悉，所以优先弄了下win10上的。<br>但是在win10中，在Package manager console 中运行update-database的时候会出现错误，错误内容是</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">   It was not possible to find any compatible framework version</span><br><span class="line">The specified framework &#39;Microsoft.NETCore.App&#39;, version &#39;2.1.0&#39; was not found.</span><br></pre></td></tr></table></figure>
+<p>同样的代码，在公司只有一个警告，说的也是这块版本不太匹配，但是在家直接失败，这样会导致数据库初始化失败。但是没有研究，竟然不通，就先去mac上下载了代码，安装 mariadb，这里需要提到一点，想让maradb可以远程访问需要设置密码，在apply的时候注意填写密码，否则无法在其他机器上访问这个db。</p>
+<p>记录下本次最在意的一点，.net core 的 ef 再mac上可以使用 dotnet 命令来进行数据库的初始化操作。具体使用command的 <a href="https://docs.microsoft.com/en-us/ef/core/miscellaneous/cli/dotnet" target="_blank" rel="noopener">链接</a><br>具体命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dotnet ef database update</span><br></pre></td></tr></table></figure>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/Blog/2020/04/20/frontendinterview/370/" class="archive-article-date">
-  <time datetime="2020-04-20T10:34:05.000Z" itemprop="datePublished">Apr 20</time>
-</a>
+<p>这命令也可以在win10 中运行，并且没有错误提示。完美绕过了 pcm的错误。<br>还是不会写文章，只是记录下自己经历中印象略深的。</p>
+
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Blog/2020/04/20/frontendinterview/370/">第370天 前端面试问题</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/Blog/2020/04/14/frontendinterview/363/" class="archive-article-date">
-  <time datetime="2020-04-14T10:34:05.000Z" itemprop="datePublished">Apr 14</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://darktutu.github.io/Blog/2018/07/14/before2020/2018-07-14-EFCoreNETcommand-linetools/" data-id="ck9xre8zn000ryppk8rnrhple" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Blog/2020/04/14/frontendinterview/363/">第363天 前端面试问题</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/Blog/2020/04/12/CSS3/css3-selectors/" class="archive-article-date">
-  <time datetime="2020-04-12T22:38:15.000Z" itemprop="datePublished">Apr 12</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Blog/2020/04/12/CSS3/css3-selectors/">CSS3 选择器</a>
-    </h1>
-  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Blog/tags/ABP/" rel="tag">ABP</a></li></ul>
 
-    </header>
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/Blog/2018/07/25/before2020/2018-07-25-c-sharp-concurrentdictionary-use/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          C# ConcurrentDictionary 的使用
+        
+      </div>
+    </a>
+  
+  
+    <a href="/Blog/2018/07/14/before2020/2018-07-14-justfortest/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">测试</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/Blog/2020/04/08/2020/2020-04-08-aliyun-centos7-install-docker/" class="archive-article-date">
-  <time datetime="2020-04-08T10:34:05.000Z" itemprop="datePublished">Apr 8</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Blog/2020/04/08/2020/2020-04-08-aliyun-centos7-install-docker/">aliyun centos7 install docker</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/Blog/2020/04/07/2020/2020-04-07-fe-interview/" class="archive-article-date">
-  <time datetime="2020-04-07T10:34:05.000Z" itemprop="datePublished">Apr 7</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Blog/2020/04/07/2020/2020-04-07-fe-interview/">前端面试题</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/Blog/2020/02/16/2020/2020-02-16-%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8ETranscluded%E6%8C%87%E4%BB%A4%E6%98%AF%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C%E7%9A%84/" class="archive-article-date">
-  <time datetime="2020-02-16T10:34:05.000Z" itemprop="datePublished">Feb 16</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Blog/2020/02/16/2020/2020-02-16-%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8ETranscluded%E6%8C%87%E4%BB%A4%E6%98%AF%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C%E7%9A%84/">作用域与Transcluded指令是如何工作的</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/Blog/2020/01/19/2020/2020-01-19-reading-keyvalue-pairs-into-dictionary-from-app-config-configsection/" class="archive-article-date">
-  <time datetime="2020-01-19T10:34:05.000Z" itemprop="datePublished">Jan 19</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Blog/2020/01/19/2020/2020-01-19-reading-keyvalue-pairs-into-dictionary-from-app-config-configsection/">c# – 从app.config configSection中读取键值对到字典</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/Blog/2020/01/02/before2020/2020-01-02-review-2019/" class="archive-article-date">
-  <time datetime="2020-01-02T10:34:05.000Z" itemprop="datePublished">Jan 2</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Blog/2020/01/02/before2020/2020-01-02-review-2019/">回望2019</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-
-  <nav id="page-nav">
-    
-    <span class="page-number current">1</span><a class="page-number" href="/Blog/archives/2020/page/2/">2</a><a class="extend next" rel="next" href="/Blog/archives/2020/page/2/">Next &amp;raquo;</a>
-  </nav>
 
 </section>
         

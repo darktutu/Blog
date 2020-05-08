@@ -5,14 +5,19 @@
   
 
   
-  <title>Archives: 2020 | Hexo</title>
+  <title>Banwagong 自己配置shadowsockets | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://darktutu.github.io/Blog/archives/2020/index.html">
+  <meta name="description" content="这个是转载的文章，但是我在配置的过程中遇到了几个问题，都在此记录一下，防止之后自己又记不住了。(以前总以为自己能记住几个特殊的步骤，回头发现之后俄都是自欺欺人啊) 原文地址原文内容也贴过来，备用啊。 原文对我有用的三、服务器机房选择洛杉矶机房二选一（DC2 QNET、DC4 MCOM）。DC4为搬瓦工新加机房。实际体验上半斤八两。加拿大、荷兰机房最好不要选择。根据概率论，美国与赵国的网络连接基数大">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Banwagong 自己配置shadowsockets">
+<meta property="og:url" content="https://darktutu.github.io/Blog/2019/09/01/before2020/2019-09-01-banwagong-install-shadowsockets/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="这个是转载的文章，但是我在配置的过程中遇到了几个问题，都在此记录一下，防止之后自己又记不住了。(以前总以为自己能记住几个特殊的步骤，回头发现之后俄都是自欺欺人啊) 原文地址原文内容也贴过来，备用啊。 原文对我有用的三、服务器机房选择洛杉矶机房二选一（DC2 QNET、DC4 MCOM）。DC4为搬瓦工新加机房。实际体验上半斤八两。加拿大、荷兰机房最好不要选择。根据概率论，美国与赵国的网络连接基数大">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-09-01T17:51:05.000Z">
+<meta property="article:modified_time" content="2020-05-08T05:28:29.559Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="centos;banwagong;shadowsockets">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/Blog/atom.xml" title="Hexo" type="application/atom+xml">
@@ -62,216 +67,91 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/Blog/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/Blog/2020/05/07/2020/2020-05-07-C#-task-async-await/" class="archive-article-date">
-  <time datetime="2020-05-07T10:34:05.000Z" itemprop="datePublished">May 7</time>
+        <section id="main"><article id="post-before2020/2019-09-01-banwagong-install-shadowsockets" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/Blog/2019/09/01/before2020/2019-09-01-banwagong-install-shadowsockets/" class="article-date">
+  <time datetime="2019-09-01T17:51:05.000Z" itemprop="datePublished">2019-09-01</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Blog/2020/05/07/2020/2020-05-07-C#-task-async-await/">c#异步 await/async</a>
+    <h1 class="article-title" itemprop="name">
+      Banwagong 自己配置shadowsockets
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/Blog/2020/04/21/frontendinterview/1/" class="archive-article-date">
-  <time datetime="2020-04-21T10:34:05.000Z" itemprop="datePublished">Apr 21</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Blog/2020/04/21/frontendinterview/1/">第1天 前端面试问题</a>
-    </h1>
-  
+        <p>这个是转载的文章，但是我在配置的过程中遇到了几个问题，都在此记录一下，防止之后自己又记不住了。(以前总以为自己能记住几个特殊的步骤，回头发现之后俄都是自欺欺人啊)</p>
+<p><a href="https://baijifeilong.github.io/2018/12/10/bandwagon/" target="_blank" rel="noopener">原文地址</a><br>原文内容也贴过来，备用啊。</p>
+<h2 id="原文对我有用的"><a href="#原文对我有用的" class="headerlink" title="原文对我有用的"></a>原文对我有用的</h2><p>三、服务器机房选择<br>洛杉矶机房二选一（DC2 QNET、DC4 MCOM）。DC4为搬瓦工新加机房。<br>实际体验上半斤八两。<br>加拿大、荷兰机房最好不要选择。<br>根据概率论，美国与赵国的网络连接基数大，IP被封杀的机率低</p>
+<p>四、服务器购买<br>支付宝购买即可。美刀自动换算为人民币</p>
+<p>有6.25趴优惠码(BWH26FXH3HIQ)可用。优惠码来自网络，有效期不详。可省1.25美刀，最终需支付18.74美刀</p>
+<p>五、服务器系统选择<br>默认系统是 Centos 6 x86 bbr。</p>
+<p>BBR是谷歌出品的拥塞控制算法，据说优化网速有奇效</p>
+<p>建议换为Centos 7 x86_64 bbr。Centos 6 太老，官方包的python只支持到2.6。没有Systemd服务管理工具</p>
+<p>六、Shadowsocks服务安装</p>
+<ol>
+<li>安装Shadowsocks<br>yum install -y epel-release 安装Centos社区仓库，pip与sodium在里头<br>yum install -y python2-pip libsodium git pip和git用来安装Shadowsocks libsodium用于支持chacha20加密算法<br>pip install git+<a href="https://github.com/shadowsocks/shadowsocks.git@master" target="_blank" rel="noopener">https://github.com/shadowsocks/shadowsocks.git@master</a> 从Shadowsocks官方Git仓库的主分支下载Shadowsocks源码并安装</li>
+<li>添加Shadowsocks为Systemd服务<br>创建并填充 /usr/lib/systemd/system/myss.service<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description&#x3D;My shadowsocks server</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">ExecStart&#x3D;&#x2F;usr&#x2F;bin&#x2F;ssserver -k password -m chacha20 -p 33333</span><br></pre></td></tr></table></figure></li>
+<li>启动Shadowsocks服务<br>systemctl start myss 启动服务<br>systemctl status myss 查看服务运行状态<br>stop 停止服务 restart 重启服务<br>七、Shadowsocks的使用</li>
+<li>运行本地代理服务<br>sslocal -s <SERVER-HOST> -k password -m chacha20 -p 33333 -l 44444</li>
+</ol>
+<p>Shadowsocks会开启一个SOCKS5本地代理。</p>
+<p>端口最好更改一下，减小被封杀机率</p>
+<p>加密方法建议选择chacha20，CPU负载低，给搬瓦工公司节省几分钱电费</p>
+<ol start="2">
+<li>测试代理是否工作<br>curl –socks5-host localhost:44444 <a href="http://www.google" target="_blank" rel="noopener">www.google</a>.</li>
+</ol>
+<h2 id="补充1"><a href="#补充1" class="headerlink" title="补充1"></a>补充1</h2><p>使用mac的termanil可以直接进行ssh的链接。<br>命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh root@**.**.**.** -p 26556</span><br></pre></td></tr></table></figure>
+<p>接下来输入密码即可<br>这个比网页上自带的bash页面好很多，也能直接编辑文件什么的</p>
+<h2 id="补充2"><a href="#补充2" class="headerlink" title="补充2"></a>补充2</h2><p>执行 安装Shadowsocks 中的安装源和pip的时候，会提示已经安装，但是安装pip的时候依然提示找不到包，原因是默认禁用了epel，所以需要我们开启这个源。<br>搜到大多数的方法都是编辑文件，当时不会用term 进行ssh链接，所以找到了这个命令行修改的方式</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum-config-manager --<span class="built_in">enable</span> remi</span><br></pre></td></tr></table></figure>
+<h2 id="补充3"><a href="#补充3" class="headerlink" title="补充3"></a>补充3</h2><p>创建的命令<br>    usr/lib/systemd/system/myss.service</p>
+<p>vim 内的保存推出是 wq。</p>
+<h2 id="补充4"><a href="#补充4" class="headerlink" title="补充4"></a>补充4</h2><p>第一次设置完成后不好用，不知道端口不对还是其他参数有问题，所以使用了之前的配置可以正常使用了。下回配置的时候注意</p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/Blog/2020/04/20/frontendinterview/370/" class="archive-article-date">
-  <time datetime="2020-04-20T10:34:05.000Z" itemprop="datePublished">Apr 20</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Blog/2020/04/20/frontendinterview/370/">第370天 前端面试问题</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/Blog/2020/04/14/frontendinterview/363/" class="archive-article-date">
-  <time datetime="2020-04-14T10:34:05.000Z" itemprop="datePublished">Apr 14</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://darktutu.github.io/Blog/2019/09/01/before2020/2019-09-01-banwagong-install-shadowsockets/" data-id="ck9xre902001eyppk0dcj1u7g" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Blog/2020/04/14/frontendinterview/363/">第363天 前端面试问题</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/Blog/2020/04/12/CSS3/css3-selectors/" class="archive-article-date">
-  <time datetime="2020-04-12T22:38:15.000Z" itemprop="datePublished">Apr 12</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Blog/2020/04/12/CSS3/css3-selectors/">CSS3 选择器</a>
-    </h1>
-  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Blog/tags/centos-banwagong-shadowsockets/" rel="tag">centos;banwagong;shadowsockets</a></li></ul>
 
-    </header>
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/Blog/2020/01/02/before2020/2020-01-02-tkinter-combobox/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Python Tkinter  Combobox
+        
+      </div>
+    </a>
+  
+  
+    <a href="/Blog/2019/04/08/before2020/2019-04-08-Dotnet-core-docker-hello/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">.Net Core Docker Hello</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/Blog/2020/04/08/2020/2020-04-08-aliyun-centos7-install-docker/" class="archive-article-date">
-  <time datetime="2020-04-08T10:34:05.000Z" itemprop="datePublished">Apr 8</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Blog/2020/04/08/2020/2020-04-08-aliyun-centos7-install-docker/">aliyun centos7 install docker</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/Blog/2020/04/07/2020/2020-04-07-fe-interview/" class="archive-article-date">
-  <time datetime="2020-04-07T10:34:05.000Z" itemprop="datePublished">Apr 7</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Blog/2020/04/07/2020/2020-04-07-fe-interview/">前端面试题</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/Blog/2020/02/16/2020/2020-02-16-%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8ETranscluded%E6%8C%87%E4%BB%A4%E6%98%AF%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C%E7%9A%84/" class="archive-article-date">
-  <time datetime="2020-02-16T10:34:05.000Z" itemprop="datePublished">Feb 16</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Blog/2020/02/16/2020/2020-02-16-%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8ETranscluded%E6%8C%87%E4%BB%A4%E6%98%AF%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C%E7%9A%84/">作用域与Transcluded指令是如何工作的</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/Blog/2020/01/19/2020/2020-01-19-reading-keyvalue-pairs-into-dictionary-from-app-config-configsection/" class="archive-article-date">
-  <time datetime="2020-01-19T10:34:05.000Z" itemprop="datePublished">Jan 19</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Blog/2020/01/19/2020/2020-01-19-reading-keyvalue-pairs-into-dictionary-from-app-config-configsection/">c# – 从app.config configSection中读取键值对到字典</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/Blog/2020/01/02/before2020/2020-01-02-review-2019/" class="archive-article-date">
-  <time datetime="2020-01-02T10:34:05.000Z" itemprop="datePublished">Jan 2</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Blog/2020/01/02/before2020/2020-01-02-review-2019/">回望2019</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-
-  <nav id="page-nav">
-    
-    <span class="page-number current">1</span><a class="page-number" href="/Blog/archives/2020/page/2/">2</a><a class="extend next" rel="next" href="/Blog/archives/2020/page/2/">Next &amp;raquo;</a>
-  </nav>
 
 </section>
         

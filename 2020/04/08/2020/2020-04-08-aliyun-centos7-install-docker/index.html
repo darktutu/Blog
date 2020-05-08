@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>aliyun centos7 install docker | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Docker CE 镜像源站docker 安装 engine docker-ceDocker CE 镜像源站使用官方安装脚本自动安装 （仅适用于公网环境）curl -fsSL https:&#x2F;&#x2F;get.docker.com | bash -s docker –mirror Aliyun手动安装帮助 (阿里云ECS可以通过内网安装，见注释部分内容) Ubuntu 14.04 16.04 (使用apt-">
+<meta property="og:type" content="article">
+<meta property="og:title" content="aliyun centos7 install docker">
+<meta property="og:url" content="https://darktutu.github.io/Blog/2020/04/08/2020/2020-04-08-aliyun-centos7-install-docker/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Docker CE 镜像源站docker 安装 engine docker-ceDocker CE 镜像源站使用官方安装脚本自动安装 （仅适用于公网环境）curl -fsSL https:&#x2F;&#x2F;get.docker.com | bash -s docker –mirror Aliyun手动安装帮助 (阿里云ECS可以通过内网安装，见注释部分内容) Ubuntu 14.04 16.04 (使用apt-">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-04-08T10:34:05.000Z">
+<meta property="article:modified_time" content="2020-05-08T05:28:29.559Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="dokcer aliyun">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/Blog/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/Blog/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/Blog/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/Blog/">Home</a>
+        
+          <a class="main-nav-link" href="/Blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/Blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://darktutu.github.io/Blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2020/2020-04-08-aliyun-centos7-install-docker" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/Blog/2020/04/08/2020/2020-04-08-aliyun-centos7-install-docker/" class="article-date">
+  <time datetime="2020-04-08T10:34:05.000Z" itemprop="datePublished">2020-04-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      aliyun centos7 install docker
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Docker-CE-镜像源站"><a href="#Docker-CE-镜像源站" class="headerlink" title="Docker CE 镜像源站"></a>Docker CE 镜像源站</h1><p>docker</p>
+<p>安装</p>
+<p>engine</p>
+<p>docker-ce<br>Docker CE 镜像源站<br>使用官方安装脚本自动安装 （仅适用于公网环境）<br>curl -fsSL <a href="https://get.docker.com" target="_blank" rel="noopener">https://get.docker.com</a> | bash -s docker –mirror Aliyun<br>手动安装帮助 (阿里云ECS可以通过内网安装，见注释部分内容)</p>
+<h2 id="Ubuntu-14-04-16-04-使用apt-get进行安装"><a href="#Ubuntu-14-04-16-04-使用apt-get进行安装" class="headerlink" title="Ubuntu 14.04 16.04 (使用apt-get进行安装)"></a>Ubuntu 14.04 16.04 (使用apt-get进行安装)</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># step 1: 安装必要的一些系统工具</span></span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get -y install apt-transport-https ca-certificates curl software-properties-common</span><br><span class="line"><span class="comment"># step 2: 安装GPG证书</span></span><br><span class="line">curl -fsSL http://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | sudo apt-key add -</span><br><span class="line"><span class="comment"># Step 3: 写入软件源信息</span></span><br><span class="line">sudo add-apt-repository <span class="string">"deb [arch=amd64] http://mirrors.aliyun.com/docker-ce/linux/ubuntu <span class="variable">$(lsb_release -cs)</span> stable"</span></span><br><span class="line"><span class="comment"># Step 4: 更新并安装 Docker-CE</span></span><br><span class="line">sudo apt-get -y update</span><br><span class="line">sudo apt-get -y install docker-ce</span><br><span class="line"></span><br><span class="line">注意：其他注意事项在下面的注释中</span><br><span class="line"><span class="comment"># 安装指定版本的Docker-CE:</span></span><br><span class="line"><span class="comment"># Step 1: 查找Docker-CE的版本:</span></span><br><span class="line"><span class="comment"># apt-cache madison docker-ce</span></span><br><span class="line"><span class="comment">#   docker-ce | 17.03.1~ce-0~ubuntu-xenial | http://mirrors.aliyun.com/docker-ce/linux/ubuntu xenial/stable amd64 Packages</span></span><br><span class="line"><span class="comment">#   docker-ce | 17.03.0~ce-0~ubuntu-xenial | http://mirrors.aliyun.com/docker-ce/linux/ubuntu xenial/stable amd64 Packages</span></span><br><span class="line"><span class="comment"># Step 2: 安装指定版本的Docker-CE: (VERSION 例如上面的 17.03.1~ce-0~ubuntu-xenial)</span></span><br><span class="line"><span class="comment"># sudo apt-get -y install docker-ce=[VERSION]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 通过经典网络、VPC网络内网安装时，用以下命令替换Step 2、Step 3中的命令</span></span><br><span class="line"><span class="comment"># 经典网络：</span></span><br><span class="line"><span class="comment"># curl -fsSL http://mirrors.aliyuncs.com/docker-ce/linux/ubuntu/gpg | sudo apt-key add -</span></span><br><span class="line"><span class="comment"># sudo add-apt-repository "deb [arch=amd64] http://mirrors.aliyuncs.com/docker-ce/linux/ubuntu $(lsb_release -cs) stable"</span></span><br><span class="line"><span class="comment"># VPC网络：</span></span><br><span class="line"><span class="comment"># curl -fsSL http://mirrors.cloud.aliyuncs.com/docker-ce/linux/ubuntu/gpg | sudo apt-key add -</span></span><br><span class="line"><span class="comment"># sudo add-apt-repository "deb [arch=amd64] http://mirrors.cloud.aliyuncs.com/docker-ce/linux/ubuntu $(lsb_release -cs) stable"</span></span><br></pre></td></tr></table></figure>
+<h2 id="CentOS-7-使用yum进行安装"><a href="#CentOS-7-使用yum进行安装" class="headerlink" title="CentOS 7 (使用yum进行安装)"></a>CentOS 7 (使用yum进行安装)</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># step 1: 安装必要的一些系统工具</span></span><br><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br><span class="line"><span class="comment"># Step 2: 添加软件源信息</span></span><br><span class="line">sudo yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br><span class="line"><span class="comment"># Step 3: 更新并安装 Docker-CE</span></span><br><span class="line">sudo yum makecache fast</span><br><span class="line">sudo yum -y install docker-ce</span><br><span class="line"><span class="comment"># Step 4: 开启Docker服务</span></span><br><span class="line">sudo service docker start</span><br><span class="line"></span><br><span class="line">注意：其他注意事项在下面的注释中</span><br><span class="line"><span class="comment"># 官方软件源默认启用了最新的软件，您可以通过编辑软件源的方式获取各个版本的软件包。例如官方并没有将测试版本的软件源置为可用，你可以通过以下方式开启。同理可以开启各种测试版本等。</span></span><br><span class="line"><span class="comment"># vim /etc/yum.repos.d/docker-ce.repo</span></span><br><span class="line"><span class="comment">#   将 [docker-ce-test] 下方的 enabled=0 修改为 enabled=1</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># 安装指定版本的Docker-CE:</span></span><br><span class="line"><span class="comment"># Step 1: 查找Docker-CE的版本:</span></span><br><span class="line"><span class="comment"># yum list docker-ce.x86_64 --showduplicates | sort -r</span></span><br><span class="line"><span class="comment">#   Loading mirror speeds from cached hostfile</span></span><br><span class="line"><span class="comment">#   Loaded plugins: branch, fastestmirror, langpacks</span></span><br><span class="line"><span class="comment">#   docker-ce.x86_64            17.03.1.ce-1.el7.centos            docker-ce-stable</span></span><br><span class="line"><span class="comment">#   docker-ce.x86_64            17.03.1.ce-1.el7.centos            @docker-ce-stable</span></span><br><span class="line"><span class="comment">#   docker-ce.x86_64            17.03.0.ce-1.el7.centos            docker-ce-stable</span></span><br><span class="line"><span class="comment">#   Available Packages</span></span><br><span class="line"><span class="comment"># Step2 : 安装指定版本的Docker-CE: (VERSION 例如上面的 17.03.0.ce.1-1.el7.centos)</span></span><br><span class="line"><span class="comment"># sudo yum -y install docker-ce-[VERSION]</span></span><br><span class="line"><span class="comment"># 注意：在某些版本之后，docker-ce安装出现了其他依赖包，如果安装失败的话请关注错误信息。例如 docker-ce 17.03 之后，需要先安装 docker-ce-selinux。</span></span><br><span class="line"><span class="comment"># yum list docker-ce-selinux- --showduplicates | sort -r</span></span><br><span class="line"><span class="comment"># sudo yum -y install docker-ce-selinux-[VERSION]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 通过经典网络、VPC网络内网安装时，用以下命令替换Step 2中的命令</span></span><br><span class="line"><span class="comment"># 经典网络：</span></span><br><span class="line"><span class="comment"># sudo yum-config-manager --add-repo http://mirrors.aliyuncs.com/docker-ce/linux/centos/docker-ce.repo</span></span><br><span class="line"><span class="comment"># VPC网络：</span></span><br><span class="line"><span class="comment"># sudo yum-config-manager --add-repo http://mirrors.could.aliyuncs.com/docker-ce/linux/centos/docker-ce.repo</span></span><br></pre></td></tr></table></figure>
+<h2 id="安装校验"><a href="#安装校验" class="headerlink" title="安装校验"></a>安装校验</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">root@iZbp12adskpuoxodbkqzjfZ:$ docker version</span><br><span class="line">Client:</span><br><span class="line"> Version:      17.03.0-ce</span><br><span class="line"> API version:  1.26</span><br><span class="line"> Go version:   go1.7.5</span><br><span class="line"> Git commit:   3a232c8</span><br><span class="line"> Built:        Tue Feb 28 07:52:04 2017</span><br><span class="line"> OS/Arch:      linux/amd64</span><br><span class="line"></span><br><span class="line">Server:</span><br><span class="line"> Version:      17.03.0-ce</span><br><span class="line"> API version:  1.26 (minimum version 1.12)</span><br><span class="line"> Go version:   go1.7.5</span><br><span class="line"> Git commit:   3a232c8</span><br><span class="line"> Built:        Tue Feb 28 07:52:04 2017</span><br><span class="line"> OS/Arch:      linux/amd64</span><br><span class="line"> Experimental: <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://darktutu.github.io/Blog/2020/04/08/2020/2020-04-08-aliyun-centos7-install-docker/" data-id="ck9xre8zc0007yppk7e5o07zf" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Blog/tags/dokcer-aliyun/" rel="tag">dokcer aliyun</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/Blog/2020/04/12/CSS3/css3-selectors/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          CSS3 选择器
+        
+      </div>
+    </a>
+  
+  
+    <a href="/Blog/2020/04/07/2020/2020-04-07-fe-interview/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">前端面试题</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/Blog/categories/c/">c#</a></li><li class="category-list-item"><a class="category-list-link" href="/Blog/categories/fe-interview/">fe-interview</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Net%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83/" rel="tag">.Net设计规范</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/ABP/" rel="tag">ABP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Python-Tkinter/" rel="tag">Python,Tkinter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/angularjs/" rel="tag">angularjs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/c/" rel="tag">c#</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/c-net/" rel="tag">c# .net</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/c-in-depth/" rel="tag">c# in depth</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/centos-banwagong-shadowsockets/" rel="tag">centos;banwagong;shadowsockets</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/css3/" rel="tag">css3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/dokcer-aliyun/" rel="tag">dokcer aliyun</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/frontend/" rel="tag">frontend</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/interview/" rel="tag">interview</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/test/" rel="tag">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/vscode/" rel="tag">vscode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/" rel="tag">杂七杂八</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/%E9%9D%A2%E8%AF%95/" rel="tag">面试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/Blog/tags/Net%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83/" style="font-size: 10px;">.Net设计规范</a> <a href="/Blog/tags/ABP/" style="font-size: 10px;">ABP</a> <a href="/Blog/tags/Python-Tkinter/" style="font-size: 10px;">Python,Tkinter</a> <a href="/Blog/tags/angularjs/" style="font-size: 10px;">angularjs</a> <a href="/Blog/tags/c/" style="font-size: 20px;">c#</a> <a href="/Blog/tags/c-net/" style="font-size: 10px;">c# .net</a> <a href="/Blog/tags/c-in-depth/" style="font-size: 12.5px;">c# in depth</a> <a href="/Blog/tags/centos-banwagong-shadowsockets/" style="font-size: 10px;">centos;banwagong;shadowsockets</a> <a href="/Blog/tags/css3/" style="font-size: 10px;">css3</a> <a href="/Blog/tags/dokcer-aliyun/" style="font-size: 10px;">dokcer aliyun</a> <a href="/Blog/tags/frontend/" style="font-size: 17.5px;">frontend</a> <a href="/Blog/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/Blog/tags/interview/" style="font-size: 15px;">interview</a> <a href="/Blog/tags/test/" style="font-size: 10px;">test</a> <a href="/Blog/tags/vscode/" style="font-size: 10px;">vscode</a> <a href="/Blog/tags/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/" style="font-size: 12.5px;">杂七杂八</a> <a href="/Blog/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 10px;">面试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/Blog/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/Blog/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/Blog/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/Blog/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/Blog/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/Blog/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/Blog/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/Blog/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/Blog/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/Blog/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/Blog/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/Blog/archives/2016/01/">January 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/Blog/2020/05/07/2020/2020-05-07-C#-task-async-await/">c#异步 await/async</a>
+          </li>
+        
+          <li>
+            <a href="/Blog/2020/04/21/frontendinterview/1/">第1天 前端面试问题</a>
+          </li>
+        
+          <li>
+            <a href="/Blog/2020/04/20/frontendinterview/370/">第370天 前端面试问题</a>
+          </li>
+        
+          <li>
+            <a href="/Blog/2020/04/14/frontendinterview/363/">第363天 前端面试问题</a>
+          </li>
+        
+          <li>
+            <a href="/Blog/2020/04/12/CSS3/css3-selectors/">CSS3 选择器</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/Blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/Blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/Blog/fancybox/jquery.fancybox.css">
+
+  
+<script src="/Blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/Blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

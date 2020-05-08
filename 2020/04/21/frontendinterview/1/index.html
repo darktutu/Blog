@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>第1天 前端面试问题 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="[css] 圣杯布局和双飞翼布局的理解和区别，并用代码实现   作用：圣杯布局和双飞翼布局解决的问题是一样的，就是两边顶宽，中间自适应的三栏布局，中间栏要在放在文档流前面以优先渲染。  区别：圣杯布局，为了中间div内容不被遮挡，将中间div设置了左右padding-left和padding-right后，将左右两个div用相对布局position: relative并分别配合right和left">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第1天 前端面试问题">
+<meta property="og:url" content="https://darktutu.github.io/Blog/2020/04/21/frontendinterview/1/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="[css] 圣杯布局和双飞翼布局的理解和区别，并用代码实现   作用：圣杯布局和双飞翼布局解决的问题是一样的，就是两边顶宽，中间自适应的三栏布局，中间栏要在放在文档流前面以优先渲染。  区别：圣杯布局，为了中间div内容不被遮挡，将中间div设置了左右padding-left和padding-right后，将左右两个div用相对布局position: relative并分别配合right和left">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-04-21T10:34:05.000Z">
+<meta property="article:modified_time" content="2020-05-08T05:28:29.559Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="frontend">
+<meta property="article:tag" content="interview">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/Blog/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/Blog/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/Blog/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/Blog/">Home</a>
+        
+          <a class="main-nav-link" href="/Blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/Blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://darktutu.github.io/Blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-frontendinterview/1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/Blog/2020/04/21/frontendinterview/1/" class="article-date">
+  <time datetime="2020-04-21T10:34:05.000Z" itemprop="datePublished">2020-04-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/Blog/categories/fe-interview/">fe-interview</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      第1天 前端面试问题
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="css-圣杯布局和双飞翼布局的理解和区别，并用代码实现"><a href="#css-圣杯布局和双飞翼布局的理解和区别，并用代码实现" class="headerlink" title="[css] 圣杯布局和双飞翼布局的理解和区别，并用代码实现"></a>[css] 圣杯布局和双飞翼布局的理解和区别，并用代码实现</h2><p>   作用：圣杯布局和双飞翼布局解决的问题是一样的，就是两边顶宽，中间自适应的三栏布局，中间栏要在放在文档流前面以优先渲染。<br>  区别：圣杯布局，为了中间div内容不被遮挡，将中间div设置了左右padding-left和padding-right后，将左右两个div用相对布局position: relative并分别配合right和left属性，以便左右两栏div移动后不遮挡中间div。双飞翼布局，为了中间div内容不被遮挡，直接在中间div内部创建子div用于放置内容，在该子div里用margin-left和margin-right为左右两栏div留出位置。</p>
+<h3 id="圣杯布局代码："><a href="#圣杯布局代码：" class="headerlink" title="圣杯布局代码："></a>圣杯布局代码：</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"hd"</span>&gt;</span>header<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"bd"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"middle"</span>&gt;</span>middle<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"left"</span>&gt;</span>left<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"right"</span>&gt;</span>right<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"footer"</span>&gt;</span>footer<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css"><span class="selector-id">#hd</span>&#123;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">height</span><span class="selector-pseudo">:50px</span>;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">background</span>: <span class="selector-id">#666</span>;</span></span><br><span class="line">    text-align: center;</span><br><span class="line">&#125;</span><br><span class="line"><span class="css"><span class="selector-id">#bd</span>&#123;</span></span><br><span class="line"><span class="css">    <span class="comment">/*左右栏通过添加负的margin放到正确的位置了，此段代码是为了摆正中间栏的位置*/</span></span></span><br><span class="line"><span class="css">    <span class="selector-tag">padding</span><span class="selector-pseudo">:0</span> 200<span class="selector-tag">px</span> 0 180<span class="selector-tag">px</span>;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">height</span><span class="selector-pseudo">:100px</span>;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="css"><span class="selector-id">#middle</span>&#123;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">float</span><span class="selector-pseudo">:left</span>;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">width</span><span class="selector-pseudo">:100</span>%;<span class="comment">/*左栏上去到第一行*/</span></span></span><br><span class="line"><span class="css">    <span class="selector-tag">height</span><span class="selector-pseudo">:100px</span>;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">background</span><span class="selector-pseudo">:blue</span>;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="css"><span class="selector-id">#left</span>&#123;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">float</span><span class="selector-pseudo">:left</span>;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">width</span><span class="selector-pseudo">:180px</span>;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">height</span><span class="selector-pseudo">:100px</span>;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">margin-left</span><span class="selector-pseudo">:-100</span>%;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">background</span>:<span class="selector-id">#0c9</span>;</span></span><br><span class="line"><span class="css">    <span class="comment">/*中间栏的位置摆正之后，左栏的位置也相应右移，通过相对定位的left恢复到正确位置*/</span></span></span><br><span class="line"><span class="css">    <span class="selector-tag">position</span><span class="selector-pseudo">:relative</span>;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">left</span><span class="selector-pseudo">:-180px</span>;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="css"><span class="selector-id">#right</span>&#123;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">float</span><span class="selector-pseudo">:left</span>;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">width</span><span class="selector-pseudo">:200px</span>;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">height</span><span class="selector-pseudo">:100px</span>;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">margin-left</span><span class="selector-pseudo">:-200px</span>;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">background</span>:<span class="selector-id">#0c9</span>;</span></span><br><span class="line"><span class="css">    <span class="comment">/*中间栏的位置摆正之后，右栏的位置也相应左移，通过相对定位的right恢复到正确位置*/</span></span></span><br><span class="line"><span class="css">    <span class="selector-tag">position</span><span class="selector-pseudo">:relative</span>;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">right</span><span class="selector-pseudo">:-200px</span>;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="css"><span class="selector-id">#footer</span>&#123;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">height</span><span class="selector-pseudo">:50px</span>;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">background</span>: <span class="selector-id">#666</span>;</span></span><br><span class="line">    text-align: center;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="双飞翼布局代码："><a href="#双飞翼布局代码：" class="headerlink" title="双飞翼布局代码："></a>双飞翼布局代码：</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"hd"</span>&gt;</span>header<span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"middle"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"inside"</span>&gt;</span>middle<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"left"</span>&gt;</span>left<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"right"</span>&gt;</span>right<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"footer"</span>&gt;</span>footer<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css"><span class="selector-id">#hd</span>&#123;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">height</span><span class="selector-pseudo">:50px</span>;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">background</span>: <span class="selector-id">#666</span>;</span></span><br><span class="line">    text-align: center;</span><br><span class="line">&#125;</span><br><span class="line"><span class="css"><span class="selector-id">#middle</span>&#123;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">float</span><span class="selector-pseudo">:left</span>;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">width</span><span class="selector-pseudo">:100</span>%;<span class="comment">/*左栏上去到第一行*/</span>     </span></span><br><span class="line"><span class="css">    <span class="selector-tag">height</span><span class="selector-pseudo">:100px</span>;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">background</span><span class="selector-pseudo">:blue</span>;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="css"><span class="selector-id">#left</span>&#123;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">float</span><span class="selector-pseudo">:left</span>;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">width</span><span class="selector-pseudo">:180px</span>;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">height</span><span class="selector-pseudo">:100px</span>;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">margin-left</span><span class="selector-pseudo">:-100</span>%;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">background</span>:<span class="selector-id">#0c9</span>;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="css"><span class="selector-id">#right</span>&#123;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">float</span><span class="selector-pseudo">:left</span>;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">width</span><span class="selector-pseudo">:200px</span>;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">height</span><span class="selector-pseudo">:100px</span>;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">margin-left</span><span class="selector-pseudo">:-200px</span>;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">background</span>:<span class="selector-id">#0c9</span>;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="css"><span class="comment">/*给内部div添加margin，把内容放到中间栏，其实整个背景还是100%*/</span> </span></span><br><span class="line"><span class="css"><span class="selector-id">#inside</span>&#123;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">margin</span><span class="selector-pseudo">:0</span> 200<span class="selector-tag">px</span> 0 180<span class="selector-tag">px</span>;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">height</span><span class="selector-pseudo">:100px</span>;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="css"><span class="selector-id">#footer</span>&#123;  </span></span><br><span class="line"><span class="css">   <span class="selector-tag">clear</span><span class="selector-pseudo">:both</span>; <span class="comment">/*记得清楚浮动*/</span>  </span></span><br><span class="line"><span class="css">   <span class="selector-tag">height</span><span class="selector-pseudo">:50px</span>;     </span></span><br><span class="line"><span class="css">   <span class="selector-tag">background</span>: <span class="selector-id">#666</span>;    </span></span><br><span class="line">   text-align: center; </span><br><span class="line">&#125; </span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="html-页面导入样式时，使用link和-import有什么区别？"><a href="#html-页面导入样式时，使用link和-import有什么区别？" class="headerlink" title="[html] 页面导入样式时，使用link和@import有什么区别？"></a>[html] 页面导入样式时，使用link和@import有什么区别？</h2><h3 id="Answer1"><a href="#Answer1" class="headerlink" title="Answer1"></a>Answer1</h3><p>区别：<br>1.link是HTML标签，@import是css提供的。<br>2.link引入的样式页面加载时同时加载，@import引入的样式需等页面加载完成后再加载。<br>3.link没有兼容性问题，@import不兼容ie5以下。<br>4.link可以通过js操作DOM动态引入样式表改变样式，而@import不可以。</p>
+<h3 id="Answer2"><a href="#Answer2" class="headerlink" title="Answer2"></a>Answer2</h3><p>1）从属关系的区别：link属于XHTML标签，而@import是CSS提供的语法规则，link除了加载CSS，还可以定义RSS，定义rel连接属性等，@import就只能加载CSS。<br>2）加载顺序的区别：页面加载时，link会同时被加载，而@import引用的CSS会等页面被加载完后再加载。<br>3）兼容性的区别：@import只有IE5以上才能被识别，而link是XHTML标签，无兼容问题。<br>4）DOM可控性区别：通过js操作DOM,可以插入link标签来改变样式；由于DOM方法是基于文档的，无法使用@import方式插入样式<br>5）权重区别(争议)：可参考：<a href="https://www.cnblogs.com/my--sunshine/p/6872224.html" target="_blank" rel="noopener">https://www.cnblogs.com/my--sunshine/p/6872224.html</a></p>
+<h3 id="Answer3"><a href="#Answer3" class="headerlink" title="Answer3"></a>Answer3</h3><p>发现之前也思考过这个问题，今天复习了一下。<br>原文链接：<a href="https://xiangshuo.blog.csdn.net/article/details/52885924" target="_blank" rel="noopener">https://xiangshuo.blog.csdn.net/article/details/52885924</a></p>
+<p>先回答区别，再扩展一下。</p>
+<p>区别1：link是XHTML标签，除了加载CSS外，还可以定义RSS等其他事务；@import属于CSS范畴，只能加载CSS。<br>区别2：link引用CSS时，在页面载入时同时加载；@import需要页面网页完全载入以后加载。<br>所以会出现一开始没有css样式，闪烁一下出现样式后的页面(网速慢的情况下)<br>区别3：link是XHTML标签，无兼容问题；@import是在CSS2.1提出的，低版本的浏览器不支持。<br>区别4：link支持使用Javascript控制DOM去改变样式；而@import不支持。<br>在html设计制作中，css有四种引入方式。</p>
+<h4 id="方式一：-内联样式"><a href="#方式一：-内联样式" class="headerlink" title="方式一： 内联样式"></a>方式一： 内联样式</h4><p>内联样式，也叫行内样式，指的是直接在 HTML 标签中的 style 属性中添加 CSS。<br>示例：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"display: none;background:red"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这通常是个很糟糕的书写方式，它只能改变当前标签的样式，如果想要多个 <div> 拥有相同的样式，你不得不重复地为每个 <div> 添加相同的样式，如果想要修改一种样式，又不得不修改所有的 style 中的代码。很显然，内联方式引入 CSS 代码会导致 HTML 代码变得冗长，且使得网页难以维护。</p>
+<h4 id="方式二：-嵌入样式"><a href="#方式二：-嵌入样式" class="headerlink" title="方式二： 嵌入样式"></a>方式二： 嵌入样式</h4><p>嵌入方式指的是在 HTML 头部中的 <code>&lt;style&gt;</code> 标签下书写 CSS 代码。<br>示例：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="css">    <span class="selector-class">.content</span> &#123;</span></span><br><span class="line">        background: red;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>嵌入方式的 CSS 只对当前的网页有效。因为 CSS 代码是在 HTML 文件中，所以会使得代码比较集中，当我们写模板网页时这通常比较有利。因为查看模板代码的人可以一目了然地查看 HTML 结构和 CSS 样式。因为嵌入的 CSS 只对当前页面有效，所以当多个页面需要引入相同的 CSS 代码时，这样写会导致代码冗余，也不利于维护。</p>
+<h4 id="方式三：链接样式"><a href="#方式三：链接样式" class="headerlink" title="方式三：链接样式"></a>方式三：链接样式</h4><p>链接方式指的是使用 HTML 头部的 标签引入外部的 CSS 文件。<br>示例：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"style.css"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>这是最常见的也是最推荐的引入 CSS 的方式。使用这种方式，所有的 CSS 代码只存在于单独的 CSS 文件中，所以具有良好的可维护性。并且所有的 CSS 代码只存在于 CSS 文件中，CSS 文件会在第一次加载时引入，以后切换页面时只需加载 HTML 文件即可。</p>
+<h4 id="方式四：导入样式"><a href="#方式四：导入样式" class="headerlink" title="方式四：导入样式"></a>方式四：导入样式</h4><p>导入方式指的是使用 CSS 规则引入外部 CSS 文件。<br>示例：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">    <span class="keyword">@import</span> url(style.css);</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>或者写在css样式中</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@charset</span> <span class="string">"utf-8"</span>;</span><br><span class="line"><span class="keyword">@import</span> url(style.css);</span><br><span class="line">*&#123; <span class="attribute">margin</span>:<span class="number">0</span>; <span class="attribute">padding</span>:<span class="number">0</span>;&#125;</span><br><span class="line"><span class="selector-class">.notice-link</span> <span class="selector-tag">a</span>&#123; <span class="attribute">color</span>:<span class="number">#999</span>;&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="js-用递归算法实现，数组长度为5且元素的随机数在2-32间不重复的值"><a href="#js-用递归算法实现，数组长度为5且元素的随机数在2-32间不重复的值" class="headerlink" title="[js] 用递归算法实现，数组长度为5且元素的随机数在2-32间不重复的值"></a>[js] 用递归算法实现，数组长度为5且元素的随机数在2-32间不重复的值</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">buildArray</span>(<span class="params">arr, length, min, max</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> num = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * (max - min + <span class="number">1</span>)) + min;</span><br><span class="line">    <span class="keyword">if</span> (!arr.includes(num)) &#123; arr.push(num); &#125;</span><br><span class="line">    <span class="keyword">return</span> arr.length === length ? arr : buildArray(arr, length, min, max);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> result = buildArray([], <span class="number">5</span>, <span class="number">2</span>, <span class="number">32</span>);</span><br><span class="line"><span class="built_in">console</span>.table(result);</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://darktutu.github.io/Blog/2020/04/21/frontendinterview/1/" data-id="ck9xre908001nyppkar0t3k9i" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Blog/tags/frontend/" rel="tag">frontend</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Blog/tags/interview/" rel="tag">interview</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/Blog/2020/05/07/2020/2020-05-07-C#-task-async-await/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          c#异步 await/async
+        
+      </div>
+    </a>
+  
+  
+    <a href="/Blog/2020/04/20/frontendinterview/370/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">第370天 前端面试问题</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/Blog/categories/c/">c#</a></li><li class="category-list-item"><a class="category-list-link" href="/Blog/categories/fe-interview/">fe-interview</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Net%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83/" rel="tag">.Net设计规范</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/ABP/" rel="tag">ABP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Python-Tkinter/" rel="tag">Python,Tkinter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/angularjs/" rel="tag">angularjs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/c/" rel="tag">c#</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/c-net/" rel="tag">c# .net</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/c-in-depth/" rel="tag">c# in depth</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/centos-banwagong-shadowsockets/" rel="tag">centos;banwagong;shadowsockets</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/css3/" rel="tag">css3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/dokcer-aliyun/" rel="tag">dokcer aliyun</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/frontend/" rel="tag">frontend</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/interview/" rel="tag">interview</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/test/" rel="tag">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/vscode/" rel="tag">vscode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/" rel="tag">杂七杂八</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/%E9%9D%A2%E8%AF%95/" rel="tag">面试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/Blog/tags/Net%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83/" style="font-size: 10px;">.Net设计规范</a> <a href="/Blog/tags/ABP/" style="font-size: 10px;">ABP</a> <a href="/Blog/tags/Python-Tkinter/" style="font-size: 10px;">Python,Tkinter</a> <a href="/Blog/tags/angularjs/" style="font-size: 10px;">angularjs</a> <a href="/Blog/tags/c/" style="font-size: 20px;">c#</a> <a href="/Blog/tags/c-net/" style="font-size: 10px;">c# .net</a> <a href="/Blog/tags/c-in-depth/" style="font-size: 12.5px;">c# in depth</a> <a href="/Blog/tags/centos-banwagong-shadowsockets/" style="font-size: 10px;">centos;banwagong;shadowsockets</a> <a href="/Blog/tags/css3/" style="font-size: 10px;">css3</a> <a href="/Blog/tags/dokcer-aliyun/" style="font-size: 10px;">dokcer aliyun</a> <a href="/Blog/tags/frontend/" style="font-size: 17.5px;">frontend</a> <a href="/Blog/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/Blog/tags/interview/" style="font-size: 15px;">interview</a> <a href="/Blog/tags/test/" style="font-size: 10px;">test</a> <a href="/Blog/tags/vscode/" style="font-size: 10px;">vscode</a> <a href="/Blog/tags/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/" style="font-size: 12.5px;">杂七杂八</a> <a href="/Blog/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 10px;">面试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/Blog/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/Blog/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/Blog/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/Blog/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/Blog/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/Blog/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/Blog/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/Blog/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/Blog/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/Blog/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/Blog/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/Blog/archives/2016/01/">January 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/Blog/2020/05/07/2020/2020-05-07-C#-task-async-await/">c#异步 await/async</a>
+          </li>
+        
+          <li>
+            <a href="/Blog/2020/04/21/frontendinterview/1/">第1天 前端面试问题</a>
+          </li>
+        
+          <li>
+            <a href="/Blog/2020/04/20/frontendinterview/370/">第370天 前端面试问题</a>
+          </li>
+        
+          <li>
+            <a href="/Blog/2020/04/14/frontendinterview/363/">第363天 前端面试问题</a>
+          </li>
+        
+          <li>
+            <a href="/Blog/2020/04/12/CSS3/css3-selectors/">CSS3 选择器</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/Blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/Blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/Blog/fancybox/jquery.fancybox.css">
+
+  
+<script src="/Blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/Blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
