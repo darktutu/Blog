@@ -1,5 +1,5 @@
 ---
-title: c#异步 await/async
+title: C# 异步编程模型
 date: 2020-05-07 10:34:05
 tags: 
 - c#
@@ -15,3 +15,4 @@ categories:
 [走进异步编程的世界 - 在 GUI 中执行异步操作](https://www.cnblogs.com/liqingwen/p/5877042.html)
 
 这四篇有个详细的介绍，但是感觉并不是很理解。还是要找点文章自己也实际编码一下，好好总结。
+
